@@ -26,7 +26,7 @@ class Productos
   }
 
   /**
-   * SAVE function()
+   * SAVE @function()
    * It reads the file, parses the JSON, adds the new object to the array, and then writes the array
    * back to the file
    * @param obj - The object to be saved.
@@ -76,7 +76,7 @@ class Productos
   }
 
   /**
-   * GET ALL function()
+   * GET ALL @function()
    * It reads the file, parses the JSON, and then maps the array of products to a new array
    */
   async getAll ()
@@ -115,7 +115,7 @@ class Productos
   }
 
   /**
-   * DELETE ALL function()
+   * DELETE ALL @function()
    * It reads the file, parses the JSON, checks if there are any products, and if there are, it writes
    * an empty array to the file
    */
@@ -136,6 +136,11 @@ class Productos
   }
 
 
+  /**
+   * CREATE NEW TXT FILE @function()
+   * This function reads the json file, parses it, and then writes the parsed data to a new text file
+   * @returns the newProductTxt.
+   */
   async createNewProdTxt ()
   {
     try {
@@ -181,10 +186,16 @@ const newProduct_5 = {
   price: 15000,
   thumbnail:
     'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone12-digitalmat-gallery-2-202111?wid=364&hei=333&fmt=png-alpha&.v=1635178709000'
+
 }
-await productos.save( newProduct_5 );
-//await productos.getById( 1 )
-//productos.getAll()
+
+// await productos.save( newProduct_1 );
+// await productos.save( newProduct_2 );
+// await productos.save( newProduct_3 );
+// await productos.save( newProduct_4 );
+// await productos.save( newProduct_5 );
+// await productos.getById( 1 )
+// productos.getAll()
 // productos.deleteAll()
-//await productos.deleteById( 3 )
+// await productos.deleteById( 3 )
 await productos.createNewProdTxt()
